@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -17,9 +17,9 @@ const Header = () => {
 
   const navLinks = [
     { href: "#servicos", label: "Serviços" },
-    { href: "#produtos", label: "Produtos" },
-    { href: "#depoimentos", label: "Depoimentos" },
-    { href: "#faq", label: "FAQ" },
+    { href: "#por-que-escolher", label: "Por Que Escolher" },
+    { href: "#como-funciona", label: "Como Funciona" },
+    { href: "#localizacao", label: "Localização" },
   ];
 
   return (
@@ -35,7 +35,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
             <span className="text-xl sm:text-2xl font-bold tracking-tight">
-              Matheus <span className="text-primary">Martins</span>
+              Psicóloga <span className="text-primary">Clínica</span>
             </span>
           </a>
 
@@ -53,17 +53,22 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-1 text-sm">
+              <Star className="w-4 h-4 text-premium-gold fill-premium-gold" />
+              <span className="font-semibold">5.0</span>
+              <span className="text-muted-foreground">(29 avaliações)</span>
+            </div>
             <Button
               asChild
               className="btn-premium text-primary-foreground font-semibold px-6"
             >
               <a
-                href="https://wa.me/5500000000000?text=Olá! Gostaria de saber mais sobre os serviços de contabilidade."
+                href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Fale Comigo
+                Agendar Consulta
               </a>
             </Button>
           </div>
@@ -92,16 +97,21 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
+              <div className="flex items-center gap-1 text-sm py-3">
+                <Star className="w-4 h-4 text-premium-gold fill-premium-gold" />
+                <span className="font-semibold">5.0</span>
+                <span className="text-muted-foreground">(29 avaliações)</span>
+              </div>
               <Button
                 asChild
                 className="btn-premium text-primary-foreground font-semibold mt-4"
               >
                 <a
-                  href="https://wa.me/5500000000000?text=Olá! Gostaria de saber mais sobre os serviços de contabilidade."
+                  href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Fale Comigo
+                  Agendar Consulta
                 </a>
               </Button>
             </nav>

@@ -1,11 +1,11 @@
-import { ArrowDown, CheckCircle2 } from "lucide-react";
+import { ArrowDown, Star, CheckCircle2, Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const highlights = [
-    "Especialista em Contabilidade Médica",
-    "Mais de 500 médicos atendidos",
-    "Economia tributária garantida",
+    "Atendimento humanizado e acolhedor",
+    "Mais de 10 anos de experiência",
+    "Ambiente seguro e confidencial",
   ];
 
   return (
@@ -31,23 +31,28 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center px-4 sm:px-6 lg:px-8">
           {/* Text Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-primary">
-                Contabilidade Premium para Médicos
+            {/* Rating Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-premium-gold/10 border border-premium-gold/20 mb-6 animate-fade-in">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-premium-gold fill-premium-gold" />
+                ))}
+              </div>
+              <span className="text-sm font-medium text-premium-gold">
+                5.0 • 29 avaliações
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              Transforme sua{" "}
-              <span className="font-display italic text-primary">carreira</span>{" "}
-              com uma contabilidade{" "}
-              <span className="font-display italic text-primary">estratégica</span>
+              Encontre seu{" "}
+              <span className="font-display italic text-primary">equilíbrio</span>{" "}
+              emocional e viva com mais{" "}
+              <span className="font-display italic text-primary">leveza</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Ajudo médicos a economizarem impostos, abrirem suas empresas e 
-              alcançarem a liberdade financeira que merecem.
+              Psicoterapia especializada para adolescentes, adultos e idosos. 
+              Atendimento presencial e online com abordagem acolhedora e personalizada.
             </p>
 
             {/* Highlights */}
@@ -71,11 +76,13 @@ const Hero = () => {
                 className="btn-premium text-primary-foreground font-semibold text-base px-8 h-14"
               >
                 <a
-                  href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consultoria."
+                  href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center gap-2"
                 >
-                  Agendar Consultoria Gratuita
+                  <Calendar className="w-5 h-5" />
+                  Agendar Consulta
                 </a>
               </Button>
               <Button
@@ -84,7 +91,15 @@ const Hero = () => {
                 size="lg"
                 className="font-semibold text-base px-8 h-14 border-border/50 hover:bg-secondary"
               >
-                <a href="#produtos">Ver Produtos</a>
+                <a
+                  href="https://wa.me/5500000000000?text=Olá! Gostaria de mais informações."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Phone className="w-5 h-5" />
+                  Fale Comigo
+                </a>
               </Button>
             </div>
           </div>
@@ -101,10 +116,10 @@ const Hero = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-6">
                   <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl">👨‍💼</span>
+                    <span className="text-3xl sm:text-4xl">👩‍⚕️</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Foto do Matheus Martins
+                    Foto Profissional
                   </p>
                 </div>
               </div>
@@ -120,7 +135,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: "0.6s" }}>
         <span className="text-xs text-muted-foreground uppercase tracking-widest">
-          Role para baixo
+          Conheça os serviços
         </span>
         <ArrowDown className="w-5 h-5 text-primary animate-scroll-indicator" />
       </div>
