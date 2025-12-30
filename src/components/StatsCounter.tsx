@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Users, Building2, TrendingDown, Award } from "lucide-react";
+import { Users, Star, Calendar, Award } from "lucide-react";
 
 interface Stat {
   icon: React.ReactNode;
@@ -13,25 +13,25 @@ const stats: Stat[] = [
     icon: <Users className="w-6 h-6" />,
     value: 500,
     suffix: "+",
-    label: "Médicos Atendidos",
+    label: "Pacientes Atendidos",
   },
   {
-    icon: <Building2 className="w-6 h-6" />,
-    value: 300,
-    suffix: "+",
-    label: "Empresas Abertas",
+    icon: <Star className="w-6 h-6" />,
+    value: 29,
+    suffix: "",
+    label: "Avaliações 5 Estrelas",
   },
   {
-    icon: <TrendingDown className="w-6 h-6" />,
-    value: 40,
-    suffix: "%",
-    label: "Economia Média em Impostos",
-  },
-  {
-    icon: <Award className="w-6 h-6" />,
+    icon: <Calendar className="w-6 h-6" />,
     value: 10,
     suffix: "+",
     label: "Anos de Experiência",
+  },
+  {
+    icon: <Award className="w-6 h-6" />,
+    value: 98,
+    suffix: "%",
+    label: "Taxa de Satisfação",
   },
 ];
 

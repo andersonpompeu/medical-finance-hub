@@ -1,19 +1,26 @@
-import { Instagram, Linkedin, Youtube, Mail, Phone } from "lucide-react";
+import { Instagram, Linkedin, Facebook, Mail, Phone, Star } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
     { label: "Serviços", href: "#servicos" },
-    { label: "Produtos", href: "#produtos" },
-    { label: "Depoimentos", href: "#depoimentos" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Por Que Escolher", href: "#por-que-escolher" },
+    { label: "Como Funciona", href: "#como-funciona" },
+    { label: "Localização", href: "#localizacao" },
+  ];
+
+  const services = [
+    { label: "Terapia para Adolescentes", href: "#servicos" },
+    { label: "Psicoterapia para Adultos", href: "#servicos" },
+    { label: "Atendimento a Idosos", href: "#servicos" },
+    { label: "Psicanálise Estratégica", href: "#servicos" },
   ];
 
   const socialLinks = [
     { icon: <Instagram className="w-5 h-5" />, href: "#", label: "Instagram" },
+    { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
     { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
-    { icon: <Youtube className="w-5 h-5" />, href: "#", label: "YouTube" },
   ];
 
   return (
@@ -24,13 +31,22 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="/" className="inline-block mb-4">
               <span className="text-2xl font-bold tracking-tight">
-                Matheus <span className="text-primary">Martins</span>
+                Psicóloga <span className="text-primary">Clínica</span>
               </span>
             </a>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
-              Contabilidade consultiva especializada para médicos e profissionais 
-              da saúde. Transformando carreiras há mais de 10 anos.
+            <p className="text-muted-foreground text-sm mb-4 max-w-xs">
+              Psicoterapia especializada com abordagem humanizada. 
+              Cuidando da sua saúde mental há mais de 10 anos.
             </p>
+            {/* Social Proof */}
+            <div className="flex items-center gap-2 mb-6">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-premium-gold fill-premium-gold" />
+                ))}
+              </div>
+              <span className="text-sm text-muted-foreground">5.0 (29 avaliações)</span>
+            </div>
             {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -67,38 +83,16 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Serviços</h4>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="#servicos"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Abertura de Empresa
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#servicos"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Consultoria Contábil
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#servicos"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Revisão Tributária
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#produtos"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Cursos e E-books
-                </a>
-              </li>
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a
+                    href={service.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {service.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -108,11 +102,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:contato@matheusmartins.com.br"
+                  href="mailto:contato@psicologa.com.br"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  contato@matheusmartins.com.br
+                  contato@psicologa.com.br
                 </a>
               </li>
               <li>
@@ -133,18 +127,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border/50 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© {currentYear} Matheus Martins. Todos os direitos reservados.</p>
-            <p>
-              Desenvolvido com{" "}
-              <span className="text-primary">♥</span>{" "}
-              por{" "}
-              <a
-                href="#"
-                className="text-primary hover:underline"
-              >
-                Lovable
-              </a>
-            </p>
+            <p>© {currentYear} Psicóloga Clínica. Todos os direitos reservados.</p>
+            <p>CRP: 00/00000</p>
           </div>
         </div>
       </div>

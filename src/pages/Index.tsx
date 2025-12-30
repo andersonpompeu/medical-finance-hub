@@ -2,10 +2,9 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StatsCounter from "@/components/StatsCounter";
 import Services from "@/components/Services";
-import ProductsSection from "@/components/ProductsSection";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import ContactCTA from "@/components/ContactCTA";
+import WhyChoose from "@/components/WhyChoose";
+import HowItWorks from "@/components/HowItWorks";
+import Location from "@/components/Location";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,10 +15,9 @@ const Index = () => {
         <Hero />
         <StatsCounter />
         <Services />
-        <ProductsSection />
-        <Testimonials />
-        <FAQ />
-        <ContactCTA />
+        <WhyChoose />
+        <HowItWorks />
+        <Location />
       </main>
       <Footer />
     </div>

@@ -1,67 +1,49 @@
-import { Building2, Users, FileSearch, GraduationCap, ArrowRight } from "lucide-react";
+import { Users, User, Heart, Brain, Sparkles, Building2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface Service {
   icon: React.ReactNode;
   title: string;
   description: string;
-  features: string[];
   variant: "dark" | "blue" | "premium";
-  cta: string;
 }
 
 const services: Service[] = [
   {
-    icon: <Building2 className="w-8 h-8" />,
-    title: "Abertura de Empresa",
-    description: "Formalize sua carreira médica com a estrutura societária ideal para o seu perfil.",
-    features: [
-      "Análise do melhor tipo societário",
-      "Registro em todos os órgãos",
-      "Planejamento tributário inicial",
-      "Suporte completo no processo",
-    ],
-    variant: "blue",
-    cta: "Abrir Minha Empresa",
-  },
-  {
     icon: <Users className="w-8 h-8" />,
-    title: "Consultoria Contábil",
-    description: "Acompanhamento mensal especializado para otimizar a gestão financeira da sua clínica.",
-    features: [
-      "Contabilidade mensal completa",
-      "Relatórios gerenciais",
-      "Gestão de folha de pagamento",
-      "Suporte fiscal e tributário",
-    ],
-    variant: "dark",
-    cta: "Contratar Consultoria",
-  },
-  {
-    icon: <FileSearch className="w-8 h-8" />,
-    title: "Revisão Tributária",
-    description: "Identifique oportunidades de economia e recupere impostos pagos a maior.",
-    features: [
-      "Análise dos últimos 5 anos",
-      "Identificação de créditos",
-      "Recuperação de impostos",
-      "Novo planejamento fiscal",
-    ],
-    variant: "premium",
-    cta: "Solicitar Revisão",
-  },
-  {
-    icon: <GraduationCap className="w-8 h-8" />,
-    title: "Cursos e E-books",
-    description: "Aprenda a gerenciar suas finanças e tomar decisões estratégicas para sua carreira.",
-    features: [
-      "Conteúdo 100% prático",
-      "Atualizações constantes",
-      "Material de apoio completo",
-      "Certificado de conclusão",
-    ],
+    title: "Terapia para Adolescentes",
+    description: "Acompanhamento especializado para os desafios da adolescência, ajudando no desenvolvimento emocional e autoconhecimento.",
     variant: "blue",
-    cta: "Ver Produtos",
+  },
+  {
+    icon: <User className="w-8 h-8" />,
+    title: "Psicoterapia para Adultos",
+    description: "Tratamento de ansiedade, depressão, estresse e outros transtornos, promovendo qualidade de vida e bem-estar.",
+    variant: "dark",
+  },
+  {
+    icon: <Heart className="w-8 h-8" />,
+    title: "Atendimento a Idosos",
+    description: "Cuidado especializado para a terceira idade, trabalhando questões como luto, solidão e adaptação às mudanças.",
+    variant: "premium",
+  },
+  {
+    icon: <Brain className="w-8 h-8" />,
+    title: "Psicanálise Estratégica",
+    description: "Abordagem profunda que combina técnicas psicanalíticas com estratégias práticas para resultados efetivos.",
+    variant: "blue",
+  },
+  {
+    icon: <Sparkles className="w-8 h-8" />,
+    title: "Necessidades Especiais",
+    description: "Atendimento adaptado e sensível para pessoas com necessidades especiais, respeitando suas particularidades.",
+    variant: "dark",
+  },
+  {
+    icon: <Building2 className="w-8 h-8" />,
+    title: "Atendimento Presencial",
+    description: "Consultas em ambiente confortável e acolhedor, com total privacidade e sigilo profissional garantidos.",
+    variant: "premium",
   },
 ];
 
@@ -99,18 +81,18 @@ const Services = () => {
             Nossos Serviços
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Soluções{" "}
-            <span className="font-display italic text-primary">completas</span>{" "}
-            para sua carreira médica
+            Atendimento{" "}
+            <span className="font-display italic text-primary">especializado</span>{" "}
+            para todas as idades
           </h2>
           <p className="text-lg text-muted-foreground">
-            Da abertura da empresa à gestão financeira completa, cuidamos de tudo 
-            para você focar no que faz de melhor: cuidar de pacientes.
+            Oferecemos psicoterapia com abordagem humanizada, respeitando a individualidade 
+            de cada paciente e suas necessidades específicas.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-6 lg:px-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8">
           {services.map((service, index) => (
             <div
               key={index}
@@ -133,19 +115,6 @@ const Services = () => {
                 {service.description}
               </p>
 
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
-                {service.features.map((feature, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-start gap-2 text-sm text-muted-foreground"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
               {/* CTA */}
               <Button
                 asChild
@@ -153,12 +122,12 @@ const Services = () => {
                 className="group/btn p-0 h-auto font-semibold text-primary hover:bg-transparent"
               >
                 <a
-                  href={service.title === "Cursos e E-books" ? "#produtos" : "https://wa.me/5500000000000"}
-                  target={service.title === "Cursos e E-books" ? "_self" : "_blank"}
+                  href="https://wa.me/5500000000000?text=Olá! Gostaria de saber mais sobre o serviço de terapia."
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  {service.cta}
+                  Saiba mais
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                 </a>
               </Button>
