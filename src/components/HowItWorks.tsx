@@ -50,9 +50,9 @@ const HowItWorks = () => {
                 <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/50 to-primary/10" />
               )}
               
-              <div className="relative text-center p-8 rounded-2xl bg-secondary/50 border border-border/50 hover-lift">
+              <div className="relative text-center p-8 rounded-2xl bg-white border border-gray-200 shadow-md hover-lift">
                 {/* Step Number */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-white text-sm font-bold">
                   {step.number}
                 </div>
                 
@@ -61,8 +61,8 @@ const HowItWorks = () => {
                   {step.icon}
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-muted-foreground text-sm">{step.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">{step.title}</h3>
+                <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
             </div>
           ))}
