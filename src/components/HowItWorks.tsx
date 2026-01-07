@@ -1,30 +1,23 @@
 import { MessageCircle, Calendar, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const steps = [
-  {
-    number: "01",
-    icon: <MessageCircle className="w-8 h-8" />,
-    title: "Entre em Contato",
-    description: "Envie uma mensagem pelo WhatsApp ou ligue para agendar. Você pode tirar suas dúvidas antes mesmo da primeira consulta.",
-  },
-  {
-    number: "02",
-    icon: <Calendar className="w-8 h-8" />,
-    title: "Agende sua Consulta",
-    description: "Escolha o melhor dia e horário para você. Oferecemos opções flexíveis para se adequar à sua rotina.",
-  },
-  {
-    number: "03",
-    icon: <Sparkles className="w-8 h-8" />,
-    title: "Inicie sua Transformação",
-    description: "Na primeira sessão, conheceremos sua história e definiremos juntos o melhor caminho para seu desenvolvimento.",
-  },
-];
-
+const steps = [{
+  number: "01",
+  icon: <MessageCircle className="w-8 h-8" />,
+  title: "Entre em Contato",
+  description: "Envie uma mensagem pelo WhatsApp ou ligue para agendar. Você pode tirar suas dúvidas antes mesmo da primeira consulta."
+}, {
+  number: "02",
+  icon: <Calendar className="w-8 h-8" />,
+  title: "Agende sua Consulta",
+  description: "Escolha o melhor dia e horário para você. Oferecemos opções flexíveis para se adequar à sua rotina."
+}, {
+  number: "03",
+  icon: <Sparkles className="w-8 h-8" />,
+  title: "Inicie sua Transformação",
+  description: "Na primeira sessão, conheceremos sua história e definiremos juntos o melhor caminho para seu desenvolvimento."
+}];
 const HowItWorks = () => {
-  return (
-    <section id="como-funciona" className="section-padding">
+  return <section id="como-funciona" className="section-padding">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
@@ -43,12 +36,9 @@ const HowItWorks = () => {
 
         {/* Steps */}
         <div className="grid md:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8 mb-12">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
+          {steps.map((step, index) => <div key={index} className="relative">
               {/* Connection Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/50 to-primary/10" />
-              )}
+              {index < steps.length - 1 && <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/50 to-primary/10" />}
               
               <div className="relative text-center p-8 rounded-2xl bg-white border border-gray-200 shadow-md hover-lift">
                 {/* Step Number */}
@@ -64,29 +54,18 @@ const HowItWorks = () => {
                 <h3 className="text-xl font-bold mb-3 text-gray-900">{step.title}</h3>
                 <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* CTA */}
         <div className="text-center px-4">
-          <Button
-            asChild
-            size="lg"
-            className="btn-premium text-primary-foreground font-semibold text-base px-10 h-14"
-          >
-            <a
-              href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar minha primeira consulta."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <Button asChild size="lg" className="btn-premium text-primary-foreground font-semibold text-base px-10 h-14">
+            <a href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar minha primeira consulta." target="_blank" rel="noopener noreferrer" className="bg-[#85a4fa]">
               Agendar Primeira Consulta
             </a>
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HowItWorks;
