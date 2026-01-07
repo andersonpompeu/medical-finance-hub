@@ -9,20 +9,20 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-[#0c2461]">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0c2461] via-[#0c2461]/95 to-[#0a1d4d]" />
       
       {/* Geometric Elements */}
-      <div className="absolute top-1/4 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       
       {/* Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }}
       />
@@ -32,25 +32,25 @@ const Hero = () => {
           {/* Text Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             {/* Rating Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-premium-gold/10 border border-premium-gold/20 mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6 animate-fade-in">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-premium-gold fill-premium-gold" />
                 ))}
               </div>
-              <span className="text-sm font-medium text-premium-gold">
+              <span className="text-sm font-medium text-white">
                 5.0 • 29 avaliações
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-white" style={{ animationDelay: "0.1s" }}>
               Encontre seu{" "}
               <span className="font-display italic text-primary">equilíbrio</span>{" "}
               emocional e viva com mais{" "}
               <span className="font-display italic text-primary">leveza</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <p className="text-lg sm:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               Psicoterapia especializada para adolescentes, adultos e idosos. 
               Atendimento presencial e online com abordagem acolhedora e personalizada.
             </p>
@@ -60,7 +60,7 @@ const Hero = () => {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2 text-sm text-white/70"
                 >
                   <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                   <span>{item}</span>
@@ -89,7 +89,7 @@ const Hero = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="font-semibold text-base px-8 h-14 border-border/50 hover:bg-secondary"
+                className="font-semibold text-base px-8 h-14 border-white/30 text-white hover:bg-white/10 hover:text-white"
               >
                 <a
                   href="https://wa.me/5500000000000?text=Olá! Gostaria de mais informações."
@@ -112,21 +112,21 @@ const Hero = () => {
             </div>
             
             {/* Placeholder for Photo */}
-            <div className="relative w-64 h-80 sm:w-80 sm:h-[400px] lg:w-96 lg:h-[480px] rounded-2xl bg-gradient-to-br from-card to-secondary border border-border/50 overflow-hidden">
+            <div className="relative w-64 h-80 sm:w-80 sm:h-[400px] lg:w-96 lg:h-[480px] rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 overflow-hidden backdrop-blur-sm">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-6">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-white/10 mx-auto mb-4 flex items-center justify-center">
                     <span className="text-3xl sm:text-4xl">👩‍⚕️</span>
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/60">
                     Foto Profissional
                   </p>
                 </div>
               </div>
               
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/30 rounded-full" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-primary/20 rounded-full" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-white/20 rounded-full" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-white/10 rounded-full" />
             </div>
           </div>
         </div>
@@ -134,10 +134,10 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-        <span className="text-xs text-muted-foreground uppercase tracking-widest">
+        <span className="text-xs text-white/60 uppercase tracking-widest">
           Conheça os serviços
         </span>
-        <ArrowDown className="w-5 h-5 text-primary animate-scroll-indicator" />
+        <ArrowDown className="w-5 h-5 text-white animate-scroll-indicator" />
       </div>
     </section>
   );
