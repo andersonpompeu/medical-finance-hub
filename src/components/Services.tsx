@@ -47,27 +47,19 @@ const services: Service[] = [
   },
 ];
 
-const getVariantStyles = (variant: Service["variant"]) => {
-  switch (variant) {
-    case "blue":
-      return "bg-gradient-to-br from-primary/20 to-accent/20 border-primary/30 hover:border-primary/50";
-    case "premium":
-      return "bg-gradient-to-br from-premium-gold/10 to-premium-gold/5 border-premium-gold/30 hover:border-premium-gold/50";
-    case "dark":
-    default:
-      return "bg-secondary/50 border-border/50 hover:border-border";
-  }
+const getVariantStyles = () => {
+  return "bg-white border-gray-200 shadow-md hover:shadow-lg hover:border-primary/30";
 };
 
 const getIconStyles = (variant: Service["variant"]) => {
   switch (variant) {
     case "blue":
-      return "bg-primary/20 text-primary";
+      return "bg-blue-100 text-blue-600";
     case "premium":
-      return "bg-premium-gold/20 text-premium-gold";
+      return "bg-amber-100 text-amber-600";
     case "dark":
     default:
-      return "bg-muted text-foreground";
+      return "bg-emerald-100 text-emerald-600";
   }
 };
 
@@ -96,9 +88,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group relative p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover-lift ${getVariantStyles(
-                service.variant
-              )}`}
+              className={`group relative p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover-lift ${getVariantStyles()}`}
             >
               {/* Icon */}
               <div
@@ -110,8 +100,8 @@ const Services = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground text-sm mb-6">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
+              <p className="text-gray-600 text-sm mb-6">
                 {service.description}
               </p>
 

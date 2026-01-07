@@ -98,15 +98,15 @@ const StatsCounter = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 sm:p-8 rounded-2xl bg-secondary/50 border border-border/50 hover-lift"
+              className="text-center p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-md hover-lift"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
                 {stat.icon}
               </div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-2">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-sm sm:text-base text-muted-foreground">
+              <p className="text-sm sm:text-base text-gray-600">
                 {stat.label}
               </p>
             </div>
