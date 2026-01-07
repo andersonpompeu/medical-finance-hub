@@ -28,7 +28,7 @@ const Footer = () => {
     href: "#servicos"
   }];
   const socialLinks = [{
-    icon: <Instagram className="w-5 h-5 bg-primary opacity-100 text-white" />,
+    icon: <Instagram className="w-5 h-5 text-white" />,
     href: "#",
     label: "Instagram"
   }, {
